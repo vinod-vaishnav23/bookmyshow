@@ -4,7 +4,7 @@ import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 
 const Login = () => {
     const loginHandler = (data) => {
-        console.log(e);
+        console.log(data);
     }
     return <div className="login-container">
         <div className="login-inner">
@@ -13,15 +13,25 @@ const Login = () => {
                 layout='vertical'
                 autoComplete='off'
                 onFinish={loginHandler}
+                initialValues={{
+
+                }}
+                size='large'
+                scrollToFirstError={true}
+
             >
-                <Form.Item label="Email" name="email" rules={[{
+                <Form.Item label='Email' name='email' rules={[{
                     required: true,
                     message: "Please enter your email!"
+                },
+                {
+                    type: 'email',
+                    message: "Please enter a valid Email address."
                 }]}>
                     <Input id='email' placeholder='email' />
                 </Form.Item>
 
-                <Form.Item label="Password" name="password" rules={[{
+                <Form.Item label='Password' name='password' rules={[{
                     required: true,
                     message: "Please enter your password!"
                 }]}>
@@ -37,7 +47,13 @@ const Login = () => {
                 </Form.Item>
             </Form>
         </div>
-        <div>Not registered yet? <span><Link to="/register">Register Now</Link></span>
+        <div>
+            <p>
+                Forgot Password?<Link to="/forgot-password">Click Here</Link>
+            </p>
+            <p>
+                Not registered yet? <span><Link to='/register'>Register Now</Link></span>
+            </p>
         </div>
     </div>
 }

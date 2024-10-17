@@ -4,7 +4,14 @@
     background-color: $grey;
 }
 
-.login-container {
+.title {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 0.6rem auto;
+}
+
+.login-container,
+.register {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,17 +20,12 @@
     padding: 1rem;
 }
 
-.login-inner {
-    border: 1px solid $grey;
-    border-radius: 5px;
+.login-inner,
+.profile-container {
+    // border: 1px solid $grey;
+    // border-radius: 5px;
     margin: 0 1rem;
     padding: 1rem;
     max-width: 500px;
     width: 100%;
-
-    .title {
-        text-align: center;
-        font-size: 1.2rem;
-        margin: 0.6rem auto;
-    }
 }
