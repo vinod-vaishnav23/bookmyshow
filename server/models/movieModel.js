@@ -13,4 +13,6 @@ const MovieSchema = new mongoose.Schema(
     { timestamps: true }
 );
 
+// @TODO: Add pre and post hooks.
+
 module.exports = MovieSchema;

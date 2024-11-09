@@ -1,19 +1,15 @@
 const express = require('express');
-const { loginUser, registerUser } = require('../controllers/userController');
+const { loginUser, registerUser, restPassword } = require('../controllers/userController');
 const userRouter = express.Router();
 
+// middleware
 userRouter.use((req, res, next) => {
-    console.log(req);
+    console.log('I am logger at userRoute');
     next();
 });
 
 userRouter.post('/login', loginUser);
 userRouter.post('/register', registerUser);
-
-userRouter.post('/forget-password', (req, res) => {
-    res.send({
-        message: 'your password has been reset and shared on mail.'
-    });
-});
+userRouter.post('/reset-password', restPassword);
 
 module.exports = userRouter;

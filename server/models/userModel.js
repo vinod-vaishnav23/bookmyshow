@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const UserModel = new mongoose.Schema({
+const UserSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
@@ -19,8 +19,11 @@ const UserModel = new mongoose.Schema({
     },
     last_name: {
         type: String,
-        required: true,
+        required: false,
     }
 }, { timestamps: true });
+
+// @TODO: add pre and post hooks
+const UserModel = mongoose.model('users', UserSchema);
 
 module.exports = UserModel;
