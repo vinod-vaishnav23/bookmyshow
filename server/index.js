@@ -23,9 +23,6 @@ try {
     })
 
     app.get('/', (req, res) => {
-        // const productModel = mongoose.model("products", productSchema);
-        // const response = await productModel.find({})
-        // console.log("Data: ", response);
         res.send("Bookmyshow server...");
     });
 
@@ -33,18 +30,14 @@ try {
     app.use('/api/user', userRoutes);
 
     app.use((err, req, res, next) => {
-        // console.log("Error: ", err);
+        if (res.headersSent) {
+            return next(err)
+        }
         //@TODO: based on the err type send the status code.
         res.status(500).send({
-            message: err.message
+            error: err.message
         });
     })
-
-    // app.use((req, res) => {
-    //     res.status(404).send('404 - Route not found');
-    // });
-
-    // @TODO: Add Error handler 
 
     app.listen(process.env.PORT, () => {
         // console.log(process.env);

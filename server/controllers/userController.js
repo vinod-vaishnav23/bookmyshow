@@ -1,27 +1,54 @@
 const UserModel = require('../models/userModel');
-const uuid = require('uuid');
+const jwt = require('jsonwebtoken');
 
-const loginUser = (req, res) => {
-    //@TODO: Validate user input -> sanitize input values.
+const encryptPassword = (password) => {
+    let encryptedPsw = password;
+    return encryptedPsw;
+}
 
-    //@TODO: perform user validation based on given username and password.
-    //@TODO: if user logged in successful generate JWT and share as response.
-    console.log(uuid.v4());
-    res.send({
-        message: 'You logged in successfully.'
-    })
+const validateUserData = (userInput) => {
+    return true;
+}
+
+const loginUser = async (req, res, next) => {
+    const userInput = req.body;
+    try {
+        if (!userInput?.email) {
+            throw new Error('Please enter your Email!');
+        }
+        if (!userInput?.password) {
+            throw new Error('Please enter your Password!');
+        }
+
+        let user = await UserModel.findOne({ email: userInput.email });
+        if (!user) {
+            throw new Error('Given email is not registered!!');
+        }
+        if (user.password != encryptPassword(userInput.password)) {
+            throw new Error('Incorrect email or password!');
+        }
+
+        // @TODO: Generate JWT token and share
+
+        res.send({
+            message: 'You logged in successfully.'
+        });
+    } catch (err) {
+        next(err);
+    }
 }
 
 const registerUser = async (req, res, next) => {
-    //@TODO: Validate user input -> sanitize input values.
     const userInput = req.body;
     try {
+        validateUserData(userInput);
         // verify the given email if it already exists.
         let user = await UserModel.findOne({ email: userInput.email });
         if (user) {
             throw new Error('Given email is already registered!!');
         }
-        //@TODO: Encrypt the user password
+        // Encrypt the user password
+        userInput.password = encryptPassword(userInput.password);
 
         // store the user data in DB
         user = new UserModel(userInput);

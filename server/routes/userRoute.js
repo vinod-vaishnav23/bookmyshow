@@ -4,7 +4,7 @@ const userRouter = express.Router();
 
 // middleware
 userRouter.use((req, res, next) => {
-    console.log('I am logger at userRoute');
+    //@TODO: Validate user input -> sanitize input values.
     next();
 });
 
