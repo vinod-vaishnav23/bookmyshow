@@ -6,8 +6,28 @@ const MovieSchema = new mongoose.Schema(
             required: true,
         },
         duration: {
+            type: Number,
+            required: true,
+        },
+        poster: {
             type: String,
             required: true,
+        },
+        released_on: {
+            type: Date,
+            required: true
+        },
+        about: {
+            type: String,
+            required: true,
+        },
+        genres: {
+            type: String,
+            required: true,
+        },
+        language: {
+            type: String,
+            required: true
         }
     },
     { timestamps: true }
@@ -15,4 +35,4 @@ const MovieSchema = new mongoose.Schema(
 
 // @TODO: Add pre and post hooks.
 
-module.exports = MovieSchema;
+module.exports = mongoose.model('movies', MovieSchema);
