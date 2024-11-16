@@ -2,10 +2,15 @@ import React, { useState, useEffect } from "react";
 import apiClient from "../util/api_client";
 import MovieCard from "../components/MovieCard";
 
+import { useSelector, useDispatch } from "react-redux";
+
 const Home = () => {
     const [movies, setMovies] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState();
+
+    const { placeHolders } = useSelector(store => store.movieState);
+    console.log(placeHolders)
 
     useEffect(() => {
         setLoading(true);
