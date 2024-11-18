@@ -9,44 +9,44 @@ const movieSlice = createSlice({
         placeHolders: [
             {
                 "id": 1,
-                "movie": "The Shawshank Redemption",
+                "title": "The Shawshank Redemption",
                 "rating": 9.2,
-                "image": "images/shawshank.jpg",
+                "poster": "https://www.movieposters.com/cdn/shop/files/shawshank_eb84716b-efa9-44dc-a19d-c17924a3f7df_480x.progressive.jpg",
                 "imdb_url": "https://www.imdb.com/title/tt0111161/"
             },
             {
                 "id": 2,
-                "movie": "The Godfather",
+                "title": "The Godfather",
                 "rating": 9.2,
-                "image": "images/godfather.jpg",
+                "poster": "https://cdn.shopify.com/s/files/1/0057/3728/3618/products/the-godfather_lkfmijop_500x749.jpg?v=1645738174",
                 "imdb_url": "https://www.imdb.com/title/tt0068646/"
             },
             {
                 "id": 3,
-                "movie": "The Dark Knight",
+                "title": "The Dark Knight",
                 "rating": 9,
-                "image": "images/dark_knight.jpg",
+                "poster": "https://www.movieposters.com/cdn/shop/files/darkknight.building.24x36_20e90057-f673-4cc3-9ce7-7b0d3eeb7d83_480x.progressive.jpg?v=1707491191",
                 "imdb_url": "https://www.imdb.com/title/tt0468569/"
             },
             {
                 "id": 4,
-                "movie": "Pulp Fiction",
+                "title": "Pulp Fiction",
                 "rating": 8.9,
-                "image": "images/pulp_fiction.jpg",
+                "poster": "https://www.movieposters.com/cdn/shop/files/ItemP2297_jpg_480x.progressive.jpg?v=1705609586",
                 "imdb_url": "https://www.imdb.com/title/tt0110912/"
             },
             {
                 "id": 5,
-                "movie": "The Lord of the Rings: The Return of the King",
+                "title": "The Lord of the Rings: The Return of the King",
                 "rating": 9,
-                "image": "images/lotr_return_king.jpg",
+                "poster": "https://www.movieposters.com/cdn/shop/products/LOTR.85633_480x.progressive.jpg?v=1673638763",
                 "imdb_url": "https://www.imdb.com/title/tt0167260/"
             },
             {
                 "id": 6,
-                "movie": "The Good, the Bad and the Ugly",
+                "title": "Spider-Man: Far from Home",
                 "rating": 8.8,
-                "image": "images/good_bad_ugly.jpg",
+                "poster": "https://www.movieposters.com/cdn/shop/products/302d466fc7d098c5dd02b2b88061a54c_a8eaba60-f75b-45bf-9bb2-8b0060ab626f_480x.progressive.jpg?v=1573651362",
                 "imdb_url": "https://www.imdb.com/title/tt0060196/"
             }
         ]
