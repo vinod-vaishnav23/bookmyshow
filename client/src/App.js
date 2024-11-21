@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Movie from './pages/Movie';
+import UserLockout from './components/UserLockout';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/profile' element={<Register />} />
-        <Route path='test' element={<div>Test</div>} />
+        <Route path='test' element={<UserLockout><div>Test</div></UserLockout>} />
         <Route path='*' element={<h1>404</h1>} />
       </Route>
     </Routes>
